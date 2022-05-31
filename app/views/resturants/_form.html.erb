@@ -1,0 +1,21 @@
+
+<%= simple_form_for @resturant, html: {multipart: true} do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :genre %>
+    <%= f.input :description %>
+    <%= f.input :location %>
+    <%= f.input :glutenfree %>
+    <%= f.input :vegan %>
+    <div class="resturant__container">
+        <%= f.input :image, as: :file, wrapper: false, label: false%>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

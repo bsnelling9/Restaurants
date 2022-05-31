@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+
+<h2><%= @resturant.name %></h2>
+<%= image_tag(@resturant.image_url, class: "food-item__image-lg") %>
+<%= render @resturant %>
+<h2>Menu</h2>
+<%= render @food_items %>
+<div>
+  <%= link_to "Edit this resturant", edit_resturant_path(@resturant) %> |
+  <%= link_to "Back to resturants", resturants_path %>
+
+  <%= button_to "Destroy this resturant", @resturant, method: :delete %>
+</div>

@@ -1,0 +1,41 @@
+<div class="food-form">
+  <div class="food-form__wrapper">
+    <%= simple_form_for @food_item, html: {multipart: true} do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div class="food-form__inputs">
+        <div class="food-form__container">
+            <%= f.input :name, required: true, input_html: {class: "food-form__input"}, wrapper: false, label_html: {class:"food-form__label"}%>
+        </div>
+        <div class="food-form__container">
+            <%= f.input :foodtype, required: true, input_html: {class: "food-form__textarea"}, wrapper: false, label_html: {class:"food-form__label"} %>  
+        </div>
+        <div class="food-form__container">
+            <%= f.input :description, required: true, input_html: {class: "food-form__textarea"}, wrapper: false, label_html: {class:"food-form__label"}%>  
+        </div>
+        <div class="food-form__container">
+            <%= f.input :ingrediants, required: true, input_html: {class: "food-form__textarea"}, wrapper: false, label_html: {class:"food-form__label"}%>
+        </div>
+        <div class="food-form__container">
+            <label class="food-form__label">Gluten Free</label>
+            <%= f.select :glutenfree, ['Yes', 'No'] %>
+        </div>
+        <div class="food-form__container">
+          <label class="food-form__label">Vegan</label>
+         <%= f.select :vegan, ['Yes', 'No'] %> 
+        </div>
+        <div class="food-form__container">
+            <%= f.input :resturant, required: true, input_html: {class: "food-from__input"}, wrapper: false, label_html: {class: "food-form__label"} %>
+        </div>  
+        <div class="food-form__container">
+            <%= f.input :image, as: :file, input_html: {class: "food-from__input"}, wrapper: false, label: false%>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
