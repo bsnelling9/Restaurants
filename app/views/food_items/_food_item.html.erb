@@ -1,5 +1,6 @@
 <div class="food-item__content" id="<%= dom_id food_item %>">
   
+  <%= link_to image_tag(food_item.image_url, class: "food-item__image-menu"), food_item %>
   <p>
     <strong>Name:</strong>
     <%= food_item.name %>

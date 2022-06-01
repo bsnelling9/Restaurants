@@ -24,8 +24,7 @@
     def create
       @resturant = Resturant.new(resturant_params)
 
-      respond_to do |format|
-        
+      respond_to do |format|   
         if @resturant.save
           format.html { redirect_to resturant_url(@resturant), notice: "Resturant was successfully created." }
           format.json { render :show, status: :created, location: @resturant }

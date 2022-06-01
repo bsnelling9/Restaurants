@@ -1,14 +1,20 @@
 <p style="color: green"><%= notice %></p>
 
+<div class="restaurant">
+  <h2><%= @resturant.name %></h2>
+  <%=  image_tag(@resturant.image_url, class: "food-item__image-lg") %>
+  <%= render @resturant %>
+  <div class="restaurant__menu">
+    <h2 class="restaurant__menu--title" >Menu</h2>
+    <h3>Mains</h3>
+    <div class="restaurant__menu--container">
+        <%= render @food_items %>
+    </div>
+  </div>
+  <div>
+    <%= link_to "Edit this resturant", edit_resturant_path(@resturant) %> |
+    <%= link_to "Back to resturants", resturants_path %>
 
-<h2><%= @resturant.name %></h2>
-<%= image_tag(@resturant.image_url, class: "food-item__image-lg") %>
-<%= render @resturant %>
-<h2>Menu</h2>
-<%= render @food_items %>
-<div>
-  <%= link_to "Edit this resturant", edit_resturant_path(@resturant) %> |
-  <%= link_to "Back to resturants", resturants_path %>
-
-  <%= button_to "Destroy this resturant", @resturant, method: :delete %>
+    <%= button_to "Destroy this resturant", @resturant, method: :delete %>
+  </div>
 </div>

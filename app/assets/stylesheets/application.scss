@@ -41,4 +41,17 @@ $link-hover: #222;
     &__wrapper {
         padding: 1rem;
     }
+    &__image-menu {
+        width: 10rem;
+        height: 10rem;
+    }
+}
+.restaurant {
+    &__menu {
+        &--container {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+    }
 }
